@@ -7,27 +7,27 @@ namespace APBD_Test_1.Controllers
 {
     [ApiController]
     [Route("api/tasks")]
-    public class TeamController : ControllerBase
+    public class TasksController : ControllerBase
     {
 
-        private readonly ITeamsDb _teamsDb;
+        private readonly ITasksDb _tasksDb;
 
-        public TeamController(ITeamsDb teamsDb)
+        public TasksController(ITasksDb tasksDb)
         {
-            _teamsDb = teamsDb;
+            _tasksDb = tasksDb;
         }
 
         
         [HttpGet("{id}")]
         public IActionResult GetTeamMemberWithTasks(int id)
         {
-            if (!_teamsDb.TeamMemberExists(id))
+            if (!_tasksDb.TeamMemberExists(id))
             {
                 return BadRequest("Incorrect Id");
             }
             try
             {
-                TaskResponse response = _teamsDb.GetTeamMemberWithTasks(id);
+                TaskResponse response = _tasksDb.GetTeamMemberWithTasks(id);
                 return Ok(response);
             }
             catch (SqlException e)
@@ -38,13 +38,13 @@ namespace APBD_Test_1.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProjectWithTasks(int id)
         {
-            if (!_teamsDb.ProjectExists(id))
+            if (!_tasksDb.ProjectExists(id))
             {
                 return BadRequest("Incorrect Id");
             }
             try
             {
-                _teamsDb.DeleteProject(id);
+                _tasksDb.DeleteProject(id);
                 return Ok("Project with id "+ id + " safely deleted");
             }
             catch (SqlException e)

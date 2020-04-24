@@ -7,7 +7,7 @@ using APBD_Test_1.Models;
 
 namespace APBD_Test_1.Services
 {
-    public class MsSqlTeamsDb : ITeamsDb
+    public class MsSqlTasksDb : ITasksDb
     {
         private const string CONNECTION_DATA_STRING =
             "Data Source=db-mssql;Initial Catalog=s18458;Integrated Security=True";
@@ -118,6 +118,7 @@ namespace APBD_Test_1.Services
             catch (SqlException e)
             {
                 Console.WriteLine(e.Message);
+               
             }
         }
 

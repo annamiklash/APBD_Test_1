@@ -27,7 +27,7 @@ namespace APBD_Test_1
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<ITeamsDb, MsSqlTeamsDb>();
+            services.AddScoped<ITasksDb, MsSqlTasksDb>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

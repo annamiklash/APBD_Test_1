@@ -3,7 +3,7 @@ using APBD_Test_1.Models;
 
 namespace APBD_Test_1.Services
 {
-    public interface ITeamsDb
+    public interface ITasksDb
     {
         TaskResponse GetTeamMemberWithTasks(int teamMemberId);
         bool TeamMemberExists(int id);
