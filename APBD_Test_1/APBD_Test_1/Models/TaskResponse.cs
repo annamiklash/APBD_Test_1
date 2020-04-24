@@ -1,26 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace APBD_Test_1.Models
 {
     public class TaskResponse
     {
-        public string Name { get; set; }
-        public string Type { get; set; }
-        public string Description { get; set; }
-        public DateTime Deadline { get; set; }
-        public string ProjectName { get; set; }
+        public TeamMember TeamMember { get; set; }
+        public List<Task> Tasks { get; set; }
 
         public TaskResponse()
         {
         }
 
-        public TaskResponse(string name, string type, string description, DateTime deadline, string projectName)
+        public TaskResponse(TeamMember teamMember, List<Task> tasks)
         {
-            Name = name;
-            Type = type;
-            Description = description;
-            Deadline = deadline;
-            ProjectName = projectName;
+            TeamMember = teamMember;
+            Tasks = tasks;
         }
     }
 }

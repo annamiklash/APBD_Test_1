@@ -8,19 +8,22 @@ namespace APBD_Test_1.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public List<Task> tasks { get; set; }
+
+        public string ProjectName { get; set; }
+        
 
         public TeamMember()
         {
         }
 
-        public TeamMember(int id, string firstName, string lastName, string email, List<Task> tasks)
+        public TeamMember(int id, string firstName, string lastName, string email, string ProjectName)
         {
             Id = id;
             FirstName = firstName;
             LastName = lastName;
             Email = email;
-            this.tasks = tasks;
+            ProjectName = ProjectName;
+
         }
     }
 }
